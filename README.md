@@ -16,13 +16,18 @@ aplikasi secara langsung tanpa perlu registrasi ulang:
 
 1. ROLE: ADMIN / MANAGER
    - Email    : admin@wms-apex.com
-   - Password : demo123456
+   - Password : admin123
    - Akses    : Full Access (User Control, Opname, Master Data, Audit Logs)
 
 2. ROLE: STAFF GUDANG
    - Email    : staff@wms-apex.com
-   - Password : demo123456
+   - Password : staff123
    - Akses    : Inbound, Outbound, Inventory Viewer, Catalog
+
+3. ROLE: MANAGER GUDANG
+   - Email    : manager@wms.com
+   - Password : manager123
+   - Akses    : View All, Laporan, Kelola Katalog & Supplier
 
 -------------------------------------------------------------------
 🛠️ TECH STACK
