@@ -1,0 +1,3 @@
+Admin	admin@wms.com	admin123	Full Access (Kelola user, produk, hapus transaksi)
+Manager	manager@wms.com	manager123	View All, Laporan, Kelola Katalog & Supplier
+Staff	staff@wms.com	staff123
