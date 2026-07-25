@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+WMS Apex Enterprise adalah aplikasi Warehouse Management System (WMS) 
+modern berbasis web yang dirancang untuk efisiensi tinggi dalam 
+manajemen persediaan barang, pelacakan mutasi stok (Inbound/Outbound), 
+Stock Opname, serta cetak label otomatis (Barcode/QR Code).
 
-## Getting Started
+Dibuat dengan standar antarmuka Minimalist Monochrome 2026, aplikasi 
+ini mendukung penuh mode Dark/Light Theme yang responsif untuk 
+perangkat desktop maupun ponsel.
 
-First, run the development server:
+-------------------------------------------------------------------
+🔑 AKUN DEMO / KREDENSIAL
+-------------------------------------------------------------------
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Gunakan kredensial demo di bawah ini untuk mengakses dashboard 
+aplikasi secara langsung tanpa perlu registrasi ulang:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. ROLE: ADMIN / MANAGER
+   - Email    : admin@wms-apex.com
+   - Password : demo123456
+   - Akses    : Full Access (User Control, Opname, Master Data, Audit Logs)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2. ROLE: STAFF GUDANG
+   - Email    : staff@wms-apex.com
+   - Password : demo123456
+   - Akses    : Inbound, Outbound, Inventory Viewer, Catalog
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-------------------------------------------------------------------
+🛠️ TECH STACK
+-------------------------------------------------------------------
 
-## Learn More
+- Framework        : Next.js 16 (App Router & Server Actions)
+- Styling          : Tailwind CSS v4
+- Database & Auth  : Supabase Cloud (PostgreSQL + SSR Auth)
+- Icons & UI       : Lucide React, Tailwind UI Component Standards
+- Theme System     : next-themes (Dark Mode / Light Mode)
+- Deployment       : Vercel Cloud Platform
 
-To learn more about Next.js, take a look at the following resources:
+-------------------------------------------------------------------
+✨ FITUR-FITUR UTAMA
+-------------------------------------------------------------------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Executive Dashboard & Realtime Analytics
+   - Card meringkas Total SKU Catalog, Kuantitas Stok, Warning Stok Kritis, 
+     dan Aktivitas Mutasi Terakhir.
+   - Peringatan otomatis (Alert) untuk barang yang menyentuh Minimum Stock.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Katalog Produk & Cetak Label QR/Barcode
+   - Manajemen Master Data Produk (SKU, Nama, HPP, Harga Jual, Lokasi Rak).
+   - Modal Dialog Cetak Label Stiker Thermal (ukuran stiker rak/kardus) 
+     dilengkapi QR Code SKU otomatis via QuickChart API.
 
-## Deploy on Vercel
+3. Stock Control (Inbound & Outbound)
+   - Inbound (Stock In): Form barang masuk dari supplier/vendor dengan 
+     pencatatan otomatis ke stok utama.
+   - Outbound (Stock Out): Form barang keluar untuk pengiriman/penjualan 
+     dengan validasi batas stok.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Physical Stock Opname & Penyesuaian
+   - Fitur verifikasi fisik barang vs data sistem.
+   - Pencatatan selisih barang (rusak/kadaluarsa) dan kalkulasi otomatis 
+     ke Audit Log Transaction.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Audit Log Transaksi & Ekspor Laporan
+   - Catatan histori mutasi barang secara immutable.
+   - Export Buttons: Dukungan ekspor laporan ke format .CSV dan fitur Cetak.
+
+6. Search Bar Realtime & Mobile Drawer
+   - Global Search (Cmd + K): Pencatatan kata kunci di URL query state 
+     (?search=...) untuk filter langsung berdasarkan SKU, Nama, atau Rak.
+   - Responsive Layout: Sidebar fixed di desktop dan berubah menjadi 
+     Slide-in Drawer dengan overlay gelap pada layar HP/Tablet.
+
+-------------------------------------------------------------------
+🚀 CARA MENJALANKAN SECARA LOKAL (LOCAL SETUP)
+-------------------------------------------------------------------
+
+1. Clone Repository:
+   git clone https://github.com/USERNAME/wms-apex-enterprise.git
+   cd wms-apex-enterprise
+
+2. Install Dependencies:
+   npm install
+
+3. Set Environment Variables (.env.local):
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+
+4. Jalankan Development Server:
+   npm run dev
+
+   Buka http://localhost:3000 di browser.
+
+-------------------------------------------------------------------
+Dikelola dan Dikembangkan oleh Ardhiffa Mada Perdana — Full-Stack Developer
+===================================================================
